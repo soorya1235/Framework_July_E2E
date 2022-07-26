@@ -90,3 +90,15 @@ Success! The Form has been submitted successfully!.
 Success! The Form has been submitted successfully!.
 2022-07-13 13:56:19,643 :INFO : test_login :This is sample log
 2022-07-13 14:25:47,987 :INFO : test_login :This is sample log
+2022-07-14 12:36:03,130 :INFO : test_loginpage :Entering the firstnamesooray
+2022-07-14 12:36:03,239 :INFO : test_loginpage :Entering the emailsarvan135@yahoo.com
+2022-07-14 12:41:36,224 :INFO : test_loginpage :Entering the firstnamesooray
+2022-07-14 12:41:36,319 :INFO : test_loginpage :Entering the emailsarvan135@yahoo.com
+2022-07-14 12:42:07,869 :INFO : test_loginpage :Entering the firstnamesooray
+2022-07-14 12:42:07,971 :INFO : test_loginpage :Entering the emailsarvan135@yahoo.com
+2022-07-14 12:42:08,034 :INFO : test_loginpage :Entering the passwordsarvan
+2022-07-14 12:42:42,787 :INFO : test_loginpage :Entering the firstnamesooray
+2022-07-14 12:42:42,882 :INFO : test_loginpage :Entering the emailsarvan135@yahoo.com
+2022-07-14 12:42:42,952 :INFO : test_loginpage :Entering the passwordsarvan
+2022-07-14 12:42:43,138 :INFO : test_loginpage :×
+Success! The Form has been submitted successfully!.

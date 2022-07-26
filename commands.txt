@@ -1,0 +1,110 @@
+using logical operator
+
+from empApp.models import Employees
+emps = Employee.objects.filter(firstName__startswith='so') | Employee.objects.filter(lastName__startswith='xy')
+
+from django.db.model import Q
+
+emps = Employee.objects.filter(Q(firstName__startswith='so') | Q(lastName__startwith='xy'))
+
+===========================
+
+
+1.qs = Employee.objects.all()
+  print(qs.query) => it will show the sql query it genertes.
+
+  print(type(qs))
+  =QuerySet django object.
+
+To get 1 records.
+2.emp = Employee.objects.get(id=1)
+
+3.print(emp.firstName)
+
+4.print(type(emp))
+
+============
+Filtering Data(no where clause)
+=============
+gt,le,gte,lte,contains,icontains,startswith,endswith,in(example)
+
+1.emps =Employee.objects.filter(salary__gt=0)
+  print(emps)
+  
+2.emps =Employee.objects.filter(salary__lt=10000)
+  print(emps)
+
+3.emps =Employee.objects.get(firstName__contains='soo')
+  print(emps)
+
+4.emps =Employee.objects.get(firstName__icontains='soo')
+  print(emps)
+
+5.print(emps.query)
+
+6.emps =Employee.objects.filter(id__in=[1,2])
+  print(emps)
+
+======================
+Using Logical Operators
+=======================
+AND(&) ,OR(|),Not(exclude)
+
+1.emps = Employee.objects.filter(firstName__startswith='soo') | .Employee.objects.get(lastName__startswith='xy')
+  print(emps)
+
+for short syntax,import form django.db.models import Q
+
+emps = Employee.objects.filter(Q(firstName__startswith='soo')) | Q(lastName__startswith='xy'))
+  print(emps)
+
+2.emps = Employee.objects.filter(Q(firstName__startswith='soo')) & Q(lastName__startswith='xy'))
+  print(emps)
+
+3.emps = Employee.objects.filter(firstName__startswith='soo',lastName__startswith='xy')
+  print(emps)
+
+4.emps = Employee.objects.exclude(salary__gt=500)
+  (This will exclude all the records greater than 500)
+
+================
+Selective Colums
+====================
+
+1.emps = Employee.objects.all()
+
+2.emps = Employee.objects.all().values_list('firstName','salary')  
+
+3.emps = Employee.objects.all().values('firstName','salary')  
+
+4.emps = Employee.objects.all().only('firstName','salary')  [only return id along with other files]
+
+===============
+Aggreation functions
+===================
+
+1.import django.db.models import Avg,Sum,Max,Min,Count
+
+avg = avg Employee.objects.all().aggregate(Avg('salary'))
+print(avg)
+
+2.
+sum = avg Employee.objects.all().aggregate(Sum('salary'))
+print(sum)
+
+3.
+Counts = Employee.objects.all().aggregate(Count('salary'))
+print(Coutns)
+
+============================
+Create Operation,Delete,Updates
+
+1.rec = Employee.objects.all().count()
+
+2. e= Employee(firstName='John',lastName='Bailey',salary=10000)
+   e.save()
+
+3.rec = Employee.objects.all().count() [increases one more rcords]
+   
+  
+
